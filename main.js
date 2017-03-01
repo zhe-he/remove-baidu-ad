@@ -39,7 +39,9 @@ function setWidth(){
   	var aResult = document.querySelectorAll('.result');
   	var oCon = document.getElementById('content_left');
   	for(let i=0;i<aResult.length;i++){
-      	aResult[i].style.width = '100%';
+        if(aResult[i]){
+            aResult[i].style.width = '100%';
+        }
     }
   	oCon.style.width = 'auto';
 }
