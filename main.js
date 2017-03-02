@@ -3,7 +3,7 @@
 // @namespace https://raw.githubusercontent.com/zhe-he/remove-baidu-ad/master/main.js
 // @grant none
 // @author zhe-he
-// @include /^https?:\/\/www.baidu.com\//
+// @include /^https?:\/\/[\w-]+.baidu.com\//
 // ==/UserScript==
 
 
@@ -39,11 +39,15 @@ function setWidth(){
   	var aResult = document.querySelectorAll('.result');
   	var oCon = document.getElementById('content_left');
   	for(let i=0;i<aResult.length;i++){
-        if(aResult[i]){
-            aResult[i].style.width = '100%';
+      	if(aResult[i]){
+          	aResult[i].style.width = '100%';
         }
+      	
     }
-  	oCon.style.width = 'auto';
+  	if(oCon){
+      	oCon.style.width = 'auto';
+    }
+  	
 }
 
 function minAd(){
